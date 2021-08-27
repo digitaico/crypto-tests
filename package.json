@@ -9,6 +9,10 @@
   "author": "Jorge Eduardo Ardila",
   "license": "ISC",
   "dependencies": {
-    "crypto-js": "^4.1.1"
+    "crypto-js": "^4.1.1",
+    "querystring": "^0.2.1"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.0.2"
   }
 }
