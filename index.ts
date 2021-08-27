@@ -1,4 +1,5 @@
 import Crypter from './crypter';
+import qs from 'querystring';
 
 export type TokenData = {
 	clientUuid: string
@@ -7,7 +8,12 @@ export type TokenData = {
 }
 
 export default class Tokenencdec {
-	static generate(token: TokenData) {
-		return Crypter.encrypt(token.toString());
+	static e (str: TokenData) {
+		return Crypter.encrypt(qs.stringify(str));
 	}
+
+	static d (str: string) {
+		return Crypter.decrypt(str);
+	}
+
 }
