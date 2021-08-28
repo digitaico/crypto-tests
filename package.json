@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "crypto-js": "^4.1.1",
-    "cryptr": "^6.0.2",
     "querystring": "^0.2.1"
   },
   "devDependencies": {
