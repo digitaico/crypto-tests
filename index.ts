@@ -6,8 +6,9 @@ export type TokenData = {
 	createdAt: number
 }
 
-export default class Tokenencdec {
+export default class MagicLink {
 	static generate(token: TokenData) {
 		return Crypter.encrypt(token.toString());
 	}
+	
 }
