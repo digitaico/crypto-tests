@@ -1,25 +1,19 @@
 import { AES, enc } from 'crypto-js';
 
+const HASHVALUE = "Vu#p!A^07cA*q&!M2CAVhO%&Wo*fiTmHt%C7E@&GWztQhGmpbfK#A1Y&tep9V!zJ";
+
 export default class Crypter {
 
-	static hash = "jeam";
-
 	static encrypt(str: string) {
-		return AES.encrypt(str, this.hash).toString();
+		return AES.encrypt(str, HASHVALUE).toString();
 	}
 
 	static decryptWithHash(str: string, hash: string) {
-		try{
-			return AES.decrypt(str, hash).toString(enc.Utf8);
-		} catch(e) {
-			if (e.message === 'Malformed UTF-8 data') {
-				return '';
-			}
-			throw e;
-		}
+		return AES.decrypt(str, hash).toString(enc.Utf8);
 	}
 
 	static decrypt(str: string) {
-		return this.decryptWithHash(str, this.hash);
+//		console.log(`toke: ${str}\nhash: ${HASHVALUE}`)
+		return this.decryptWithHash(str, HASHVALUE);
 	}
 }
